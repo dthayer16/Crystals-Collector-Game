@@ -27,9 +27,9 @@
             // Create an img element and the src attribute
             var imageCrystal = $("<img>").attr("src", crystals[crystal])
             // Append image to crystal button
-            $(crystalBtn).append(imageCrystal)
+            crystalBtn.append(imageCrystal)
             // Add random value to the crystal
-            $(crystalBtn).val(Math.random(Math.floor() * 100));
+            crystalBtn.val(Math.random(Math.floor() * 100));
             // Append button to #buttons div
             $("#buttons").append(crystalBtn);
           });
