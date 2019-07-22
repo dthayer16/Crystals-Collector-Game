@@ -50,11 +50,10 @@ function setupGame() {
 // Q: Why do we have to set the click event listener on the document?
 $(document).on("click", ".crystal", function() {
   // Grab value from HTML element. Remember to use the "this" keyword to keep it dynamic;
-  $("#current-score").text($(this).val());
   // Add to the current score.
-  currentScore += $(this).val();
+  currentScore += parseInt($(this).val());
   // Update current score on page
-  $("#current-score").val(currentScore);
+  $("#current-score").text(currentScore);
   // Place logic for if the score is equal to the target score
   if (targetScore === currentScore) {
     wins++;
