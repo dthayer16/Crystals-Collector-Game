@@ -21,7 +21,7 @@ setupGame();
 // setup game with initial values
 function setupGame() {
   // Empty out buttons div
-  $(".buttons").empty();
+  $("#buttons").empty();
   // forEach crystal
   crystals.forEach(function(crystal) {
     // Create a new crystal button and add the appropriate classes to it.
@@ -31,12 +31,12 @@ function setupGame() {
     // Append image to crystal button
     crystalBtn.append(imageCrystal);
     // Add random value to the crystal
-    crystalBtn.val(Math.floor(Math.random() * 100));
+    crystalBtn.val(Math.floor(Math.random() * 10));
     // Append button to #buttons div
     $("#buttons").append(crystalBtn);
   });
 
-  targetScore = Math.floor(Math.random() * 1000);
+  targetScore = Math.floor(Math.random() * 100);
   currentScore = 0;
 
   // update the HTML with targetScore, currentScore, wins, and losses
@@ -50,11 +50,11 @@ function setupGame() {
 // Q: Why do we have to set the click event listener on the document?
 $(document).on("click", ".crystal", function() {
   // Grab value from HTML element. Remember to use the "this" keyword to keep it dynamic;
-  $("#buttons").text($(this).val());
+  $("#current-score").text($(this).val());
   // Add to the current score.
   currentScore += $(this).val();
   // Update current score on page
-  $("#current-score").text(currentScore);
+  $("#current-score").val(currentScore);
   // Place logic for if the score is equal to the target score
   if (targetScore === currentScore) {
     wins++;
@@ -63,6 +63,6 @@ $(document).on("click", ".crystal", function() {
   // or if the score is greater than the target score.
   if (targetScore < currentScore) {
     losses++;
-    setupGame();
+    setupGame();  
   }
 });
