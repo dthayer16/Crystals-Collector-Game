@@ -31,12 +31,12 @@ function setupGame() {
     // Append image to crystal button
     crystalBtn.append(imageCrystal);
     // Add random value to the crystal
-    crystalBtn.val(Math.floor(Math.random() * 10));
+    crystalBtn.val(Math.floor(Math.random() * 10) + 1);
     // Append button to #buttons div
     $("#buttons").append(crystalBtn);
   });
 
-  targetScore = Math.floor(Math.random() * 100);
+  targetScore = Math.floor(Math.random() * 100) + 1;
   currentScore = 0;
 
   // update the HTML with targetScore, currentScore, wins, and losses
