@@ -36,7 +36,7 @@ function setupGame() {
     $("#buttons").append(crystalBtn);
   });
 
-  targetScore = Math.floor(Math.random() * 100) + 1;
+  targetScore = Math.floor(Math.random() * 100) + 50;
   currentScore = 0;
 
   // update the HTML with targetScore, currentScore, wins, and losses
